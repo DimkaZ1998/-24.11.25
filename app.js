@@ -1,15 +1,11 @@
 'use strict'
 
-const text = document.getElementById('text-element');
-const originalText = document.getElementById('text-element').textContent;
-function changeText(){
-    text.textContent =  'Текст был изменен!';
+function safeOutput(){
+    let safeOutput = document.getElementById('safe-output');
+    console.log(safeOutput.textContent);
 }
 
-function addText(){
-    text.textContent += '(дополнено)';
-}
-
-function resetText(){
-    text.textContent = originalText;
+function unsafeOutput(){
+    let unsafeOutput = document.getElementById('unsafe-output');
+    console.log(unsafeOutput.innerHTML);
 }
