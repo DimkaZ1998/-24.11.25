@@ -1,24 +1,27 @@
 'use strict'
 
+const styleBlock = document.getElementById('style-demo');
+const originalStyles = styleBlock.style.cssText;
 
-function addSimpleContent(){
-    const newParagraph = document.createElement('p');
-    newParagraph.textContent = 'Новый текстовый блок';
+function changeColor(){
 
-    document.body.append(newParagraph);
+    styleBlock.style.color = 'lightblue';
 }
 
-function addHTMLContent(){
-    const newBlock = `
-    <div class="newBlock">
-        <h2>Динамически добавленный заголовок</h2>
-    </div>`;
+function changeSize(){
 
-    document.body.innerHTML += newBlock;
+    styleBlock.style.width = '300px';
+    styleBlock.style.height = '100px';
 }
 
-function clearContent(){
-    const container = document.getElementById('dynamic-content');
+function addBorder(){
 
-    container.innerHTML = null;
+    styleBlock.style.cssText += `
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+    `;
+}
+
+function resetStyles(){
+    styleBlock.style.cssText = originalStyles;
 }
